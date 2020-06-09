@@ -99,7 +99,7 @@ static void test_scoped_ptr() {
 
 void bar_shared() {
     shared_ptr<foo> foo_shptr(new foo {888, 999});
-    shared_ptr<foo>& foo_shptr2 = foo_shptr;
+    shared_ptr<foo> foo_shptr2 = foo_shptr;
     cout << foo_shptr.get() << " " << foo_shptr2.get() << endl;
     assert(foo_shptr.get() == foo_shptr2.get());
     assert(foo_shptr->field1 == foo_shptr2->field1);
